@@ -1,0 +1,12 @@
+<h1 class="mb-5 font-semibold text-2xl text-blue-800">New Tour</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.tour_path(@conn, :create)) %>
+
+<nav class="flex text-left mt-10">
+  <div class="flex-1">
+    <%= link to: Routes.tour_path(@conn, :index), class: "back-btn rounded items-center" do %>
+      <i class="fas fa-arrow-left"></i>
+      <span>Back</span>
+    <% end %>
+  </div>
+</nav>

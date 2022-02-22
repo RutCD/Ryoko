@@ -1,0 +1,63 @@
+<.form let={f} for={@changeset} action={@action}>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :complexity %>
+  <%= select f, :complexity, complexity_enum(), class: "" %>
+  <%= error_tag f, :complexity %>
+
+  <%= label f, :minimum_age %>
+  <%= text_input f, :minimum_age %>
+  <%= error_tag f, :minimum_age %>
+
+  <%= label f, :kids_age_rate %>
+  <%= text_input f, :kids_age_rate %>
+  <%= error_tag f, :kids_age_rate %>
+
+  <%= label f, :what_to_know %>
+  <%= textarea f, :what_to_know %>
+  <%= error_tag f, :what_to_know %>
+
+  <%= label f, :what_to_take %>
+  <%= textarea f, :what_to_take %>
+  <%= error_tag f, :what_to_take %>
+
+  <%= label f, :includes %>
+  <%= textarea f, :includes %>
+  <%= error_tag f, :includes %>
+
+  <%= label f, :does_not_include %>
+  <%= textarea f, :does_not_include %>
+  <%= error_tag f, :does_not_include %>
+
+  <%= label f, :short_description %>
+  <%= textarea f, :short_description %>
+  <%= error_tag f, :short_description %>
+
+  <%= label f, :long_description %>
+  <%= textarea f, :long_description %>
+  <%= error_tag f, :long_description %>
+
+  <%= label f, :recommendations %>
+  <%= textarea f, :recommendations %>
+  <%= error_tag f, :recommendations %>
+
+  <%= label f, :points_of_interest %>
+  <%= textarea f, :points_of_interest %>
+  <%= error_tag f, :points_of_interest %>
+
+  <%= label f, :notes %>
+  <%= textarea f, :notes %>
+  <%= error_tag f, :notes %>
+
+  <div class="w-full text-center">
+    <%= submit "Guardar Tour", class: "submit-btn" %>
+  </div>
+</.form>

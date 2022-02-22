@@ -1,0 +1,73 @@
+<h1>Show Tour</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @tour.name %>
+  </li>
+
+  <li>
+    <strong>Complexity:</strong>
+    <%= @tour.complexity %>
+  </li>
+
+  <li>
+    <strong>Minimum age:</strong>
+    <%= @tour.minimum_age %>
+  </li>
+
+  <li>
+    <strong>Kids age rate:</strong>
+    <%= @tour.kids_age_rate %>
+  </li>
+
+  <li>
+    <strong>What to know:</strong>
+    <%= @tour.what_to_know %>
+  </li>
+
+  <li>
+    <strong>What to take:</strong>
+    <%= @tour.what_to_take %>
+  </li>
+
+  <li>
+    <strong>Includes:</strong>
+    <%= @tour.includes %>
+  </li>
+
+  <li>
+    <strong>Does not include:</strong>
+    <%= @tour.does_not_include %>
+  </li>
+
+  <li>
+    <strong>Short description:</strong>
+    <%= @tour.short_description %>
+  </li>
+
+  <li>
+    <strong>Long description:</strong>
+    <%= @tour.long_description %>
+  </li>
+
+  <li>
+    <strong>Recommendations:</strong>
+    <%= @tour.recommendations %>
+  </li>
+
+  <li>
+    <strong>Points of interest:</strong>
+    <%= @tour.points_of_interest %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @tour.notes %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.tour_path(@conn, :edit, @tour) %></span> |
+<span><%= link "Back", to: Routes.tour_path(@conn, :index) %></span>

@@ -1,0 +1,41 @@
+<div class="w-full">
+  <h1 class="mx-auto mb-5 font-semibold text-2xl text-blue-800">Listing Tours</h1>
+
+  <table class="ui-table">
+    <thead class="bg-white">
+      <tr class="text-gray-600 text-left">
+        <th>Name</th>
+        <th>Complexity</th>
+        <th>Minimum age</th>
+        <th>Kids age rate</th>
+        <th>Short description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for tour <- @tours do %>
+      <tr>
+        <td><%= tour.name %></td>
+        <td><%= tour.complexity %></td>
+        <td><%= tour.minimum_age %></td>
+        <td><%= tour.kids_age_rate %></td>
+        <td><%= tour.short_description %></td>
+        <td>
+          <span><%= link "Show", to: Routes.tour_path(@conn, :show, tour) %></span>
+          <span><%= link "Edit", to: Routes.tour_path(@conn, :edit, tour) %></span>
+          <span><%= link "Delete", to: Routes.tour_path(@conn, :delete, tour), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+  <div class="mx-auto text-right mt-5">
+    <%= link to: Routes.tour_path(@conn, :new),
+      class: "primary-btn items-center" do %>
+      <i class="fas fa-plus"></i>
+      <span>New Tour</span>
+    <% end %>
+  </div>
+</div>
+

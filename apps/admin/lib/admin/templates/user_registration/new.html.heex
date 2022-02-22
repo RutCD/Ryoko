@@ -1,0 +1,39 @@
+<div class="auth-form-wrapper">
+  <div class="text-center mb-4">
+    <h1 class="title-web">Register</h1>
+  </div>
+
+  <.form let={f} for={@changeset} action={Routes.user_registration_path(@conn, :create)}>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <div class="form-label-group">
+      <%= text_input f, :email, class: "form-control", placeholder: "Email address", required: true, autofocus: true %>
+      <%= label f, :email, "Email address", class: "control-label" %>
+      <%= error_tag f, :email %>
+    </div>
+
+    <div class="form-label-group">
+      <%= password_input f, :password, class: "form-control", placeholder: "Password", required: true %>
+      <%= label f, :password, class: "control-label" %>
+      <%= error_tag f, :password %>
+    </div>
+
+    <div class="form-label-group">
+      <%= password_input f, :password_confirmation, class: "form-control", placeholder: "Password confirmation", required: true %>
+      <%= label f, :password_confirmation, "Password confirmation", class: "control-label" %>
+      <%= error_tag f, :password_confirmation %>
+    </div>
+
+    <%= submit "Sign Up", class: "btn btn-lg btn-primary btn-block" %>
+  </.form>
+
+</div>
+
+<p>
+  <%= link "Log in", to: Routes.user_session_path(@conn, :new) %> |
+  <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new) %>
+</p>

@@ -1,0 +1,18 @@
+<div class="relative pt-8 pb-6 mt-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+        <div class="text-sm text-blueGray-500 font-semibold py-1">
+          <%= if @current_user do %>
+            <%= @current_user.email %>
+            <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "btn-primary" %>
+            <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %>
+          <% else  %>
+            <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "btn-primary" %>
+            <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "btn-secondary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
