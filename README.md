@@ -1,3 +1,1 @@
-# Ryoko.Umbrella
 # Ryoko
-# BeCreative
