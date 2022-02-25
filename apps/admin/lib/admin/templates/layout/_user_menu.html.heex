@@ -1,12 +1,26 @@
 <div class=" relative pt-8 pb-6 mt-8">
   <div class="container mx-auto px-4">
-    <div class="flex flex-wrap items-left mfd:justify-between justify-center">
-      
-        <div class="text-sm text-blueGray-500 font-semibold py-1">
+    <div>
+        
+        <div class="text-right font-semibold py-1">
           <%= if @current_user do %>
-            <%= @current_user.email %>
-            <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "btn-primary" %>
-            <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %>
+             <p>
+            <%= @current_user.email %></p>
+
+              <ul class="inline-flex">
+                <li class="mr-2">
+                <span class="text-gray-500 hover:text-black text-xl">
+                  <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "btn-primary" %>
+                </span>
+                </li>
+
+                   <h1 class= "mr-2 text-gray-500  text-xl" >|</h1>
+                      <li class="mr-2">
+                    <span class="text-gray-500 hover:text-black text-xl">
+                      <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %>
+                    </span>
+                    </li>
+              </ul>
           <% else  %>
           <ul class="flex">
               <li class="mr-2">
@@ -17,9 +31,9 @@
                    <h1 class= "mr-2 text-gray-500  text-xl" >|</h1>
 
                   <li>
-                    <spam class="text-gray-500 hover:text-black text-xl">
+                    <span class="text-gray-500 hover:text-black text-xl">
                       <%= link " Log in", to: Routes.user_session_path(@conn, :new), class: "btn-secondary" %>
-                    </spam>
+                    </span>
                   </li>
                   
 
